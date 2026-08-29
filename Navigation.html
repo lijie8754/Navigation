@@ -21,28 +21,33 @@
             overflow: hidden;
         }
         
-        /* 卡片1居中 - 水平垂直居中（上移25px） */
+        /* 卡片1 - 在flex布局中自然排列 */
         #glass {
-            position: fixed;
-            top: calc(50% - 125px);
-            left: 50%;
-            transform: translate(-50%, -50%);
             width: 660px;
-            max-height: 85vh;
+            max-height: 62vh;
             overflow-y: auto;
             padding: 28px 30px 30px 30px;
+            flex-shrink: 1;
         }
         
-        /* 卡片2居中 - 放在glass下面 */
+        /* 卡片2 - 放在glass下面，间距固定 */
         #glass2 {
-            position: fixed;
-            top: calc(50% + 115px);
-            left: 50%;
-            transform: translate(-50%, -50%);
             width: 660px;
-            max-height: 85vh;
+            max-height: 62vh;
             overflow-y: auto;
             padding: 28px 30px 30px 30px;
+            flex-shrink: 1;
+        }
+        
+        /* 页面布局 - 两个面板垂直居中排列，间距固定40px */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
         
         /* 搜索区域布局 - 搜索框和清除按钮在同一行居中 */
@@ -384,6 +389,11 @@
             </a>
             <a class="btn-base icon-btn" href="https://console.sqlpub.com/dashboard/overview" target="_blank" title="SQLPub">
                 <img src="https://console.sqlpub.com/favicon.ico" width="28" height="28" loading="lazy" alt="SQLPub">
+            </a>
+            <div style="flex-basis:100%;height:0"></div>
+            <!-- 第四排：我的 -->
+            <a class="btn-base icon-btn" href="https://lijie8754.github.io/turbo-lamp/weather.html" target="_blank" title="我的">
+                <img src="https://lijie8754.github.io/favicon.ico" width="28" height="28" loading="lazy" alt="我的" onerror="this.src='https://icon.horse/icon/lijie8754.github.io'">
             </a>
         </div>
     </div>
